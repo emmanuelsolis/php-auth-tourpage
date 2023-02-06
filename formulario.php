@@ -67,19 +67,58 @@
             
         </aside>
         <div class="widget-1">
-            <h3>Datos Personales</h3>
+            <h3>Bienvenido</h3>
             <div class="formulario-contenedor">
-                <form action="index.php" method="post">
-                    <label for="nombre">Nombre completo:</label>
+                <form action="<?php $_PHP_SELF ?>" method="post">
+                <?php
+                    if(isset($_POST['nombre'])){
+                        $nombre=$_POST['nombre'];
+                        $email=$_POST['email'];
+                        $password=$_POST['password'];
+                        $genero = "";
+
+                        if(isset($_POST['genero'])){
+                            $genero=$_POST['genero'];
+                        }else {
+                            $genero="";
+                        }
+
+                        $campos = array();
+
+                        if($nombre == ""){
+                            array_push($campos, "El nombre no puede estar vacío");
+                        }
+                        if($email == "" || strpos($email, "@") === false || strpos($email, ".") === false){
+                            array_push($campos, "El correo electrónico no puede estar vacío y debe tener un formato válido ");
+                        };
+                        if($password == "" || strlen($password) < 6){
+                            array_push($campos, "La contraseña no puede estar vacía y debe tener al menos 6 caracteres");
+                        };
+                        if($genero == ""){
+                            array_push($campos, "<div class='w3-panel w3-red'><p>Debe seleccionar un género</p></div>");
+                        };
+                        if(count($campos) > 0){
+                            echo "<div class='error'>";
+                            for($i = 0; $i < count($campos); $i++){
+                                echo "<li>".$campos[$i]."</li>";
+                            };
+                        }else {
+                            echo "<div class='success'>
+                            Registrado con éxito!!";
+                        };     
+                        echo "</div"; 
+                    }   ;
+                ?>
+                    <label for="nombre">Nombre completo: </label> <br>
                     <input type="text" name="nombre" id="nombre">
                     <label for="email">Correo electrónico:</label>
                     <input type="email" name="email" id="email">
-                    <label for="telefono">Teléfono:</label>
-                    <input type="number" name="telefono" id="telefono"><br>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" id="password"><br>
                     <input type="radio" name="genero" id="genero" value="hombre">Hombre
                     <input type="radio" name="genero" id="genero" value="mujer">Mujer
                     <br><br>
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" name="enviar" value="Registrarse">
                 </form>
             </div>
         </div>
@@ -112,7 +151,7 @@
                         <input type="checkbox" name="lugares[]" id="opcion-8" value="makonde plateau">Makonde Plateau
                     </label>
                     <h4>Elije las actividades que le agrada realizar en vacaciones</h4>
-                    <select name="actividades[]" multiple id="actividades">
+                    <select name="actividades" multiple id="actividades">
                         <option value="senderismo">Senderismo</option>
                         <option value="rafting">Rafting</option>
                         <option value="equitación">Equitación</option>

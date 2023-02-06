@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 if (isset($_POST['enviar'])) {
     $nombre = $_POST['nombre'];
@@ -34,7 +34,7 @@ else{
 
 <?php
 }
-?>
+?> -->
 
 <?php
 
@@ -43,11 +43,11 @@ if(isset($_POST['enviar'])){
         $actividades = $_POST['actividades'];
          echo "Los lugares que te gustaría visitar son: ";
          foreach($lugares as $lugar){
-              echo "$lugar. ";
+              echo "$lugar ";
          }
          echo "<br>Las actividades prefieres son: ";
          foreach($actividades as $actividad){
-              echo "$actividad- ";
+              echo "$actividad ";
          }
     }
     else{
@@ -57,4 +57,4 @@ if(isset($_POST['enviar'])){
 
 
 <br><br>
-<a href="index.html">Volver al Home</a>
+<a href="formulario.php">Volver al Home</a>
