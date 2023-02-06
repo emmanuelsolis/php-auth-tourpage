@@ -21,6 +21,7 @@ body{
 	border-radius: 5px;
 	font-size: xx-small;
 	list-style: none;
+	font-weight: 900;
 	text-align: left;
 }
 .widget-1 .success{
@@ -109,18 +110,25 @@ main{
 	align-items: center;
 	align-content: center;
 }
+aside{
+	color: #fff;
+}
 aside.imagen-contendor{
 	width: 300px;
 	height: 300px;
 	margin-top: 20px;
 }
 main>h2{
-	font-weight: 400;
+	font-weight: 900;
+	color:brown
 }
 main> p{
 	font-size: 1em;
 	padding: 10px;
 	margin-top: 10px;
+}
+main>h3{
+	color: #faa43d;
 }
 main>img{
 	float: right;
@@ -141,9 +149,9 @@ nav {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	display: inline-block;
+	display: inline-flex;
 	flex-direction: row;
-	align-content: end;
+	align-content: space-around;
   }
   
   nav li {
@@ -160,9 +168,10 @@ nav {
   }
   
   nav a:hover {
-	background-color: slateblue;
 	text-decoration: none;
+	font-size: 18px;
 	font-weight: bolder;
+	color: black;
   }
 
  
