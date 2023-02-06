@@ -57,10 +57,10 @@
             </ol>
             <div class="imagen-contenedor">
                 <img src="./img/safari.jpg" alt="tanzania">
-            </div>
+            </div><hr>
             <div class="imagen-contenedor">
                 <img src="./img/tribu.jpg" alt="tanzania">
-            </div>
+            </div><hr>
              <div class="imagen-contenedor">
                 <img src="./img/mount-kilimanjaro.jpg.jpg" alt="tanzania">
             </div> 
@@ -95,7 +95,7 @@
                             array_push($campos, "La contraseña no puede estar vacía y debe tener al menos 6 caracteres");
                         };
                         if($genero == ""){
-                            array_push($campos, "<div class='w3-panel w3-red'><p>Debe seleccionar un género</p></div>");
+                            array_push($campos, "Debe seleccionar un género");
                         };
                         if(count($campos) > 0){
                             echo "<div class='error'>";
