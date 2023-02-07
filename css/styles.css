@@ -92,9 +92,14 @@ body{
 .conteiner .widget-2{
 	grid-area: widget-2;
 	flex-direction: column;
+	text-align: left;
 }
 .widget-2::nth-child(2)>form{
 	padding: 20px;
+}
+.widget-2 .sites{
+	align-items: center;
+	padding-left: 50px;
 }
 .conteiner>footer {
 	background: #12203e;

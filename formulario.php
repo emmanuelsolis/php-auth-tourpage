@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,22 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;500,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/styles.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="conteiner">
         <header class="navbar-conteiner">
-               <nav>
-                   <ul>
-                     <li><a href="#home">Home</a></li>
-                     <li><a href="#about">About</a></li>
-                     <li><a href="#services">Services</a></li>
-                     <li><a href="#contact">Contact</a></li>
-                   </ul>
-                 </nav>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </header>
         <main class="main">
             <h2>Viaja con nosotro al paraíso en la tierra</h2>
@@ -57,58 +59,60 @@
             </ol>
             <div class="imagen-contenedor">
                 <img src="./img/safari.jpg" alt="tanzania">
-            </div><hr>
+            </div>
+            <hr>
             <div class="imagen-contenedor">
                 <img src="./img/tribu.jpg" alt="tanzania">
-            </div><hr>
-             <div class="imagen-contenedor">
+            </div>
+            <hr>
+            <div class="imagen-contenedor">
                 <img src="./img/mount-kilimanjaro.jpg.jpg" alt="tanzania">
-            </div> 
-            
+            </div>
+
         </aside>
         <div class="widget-1">
             <h3>Bienvenido</h3>
             <div class="formulario-contenedor">
                 <form action="<?php $_PHP_SELF ?>" method="post">
-                <?php
-                    if(isset($_POST['nombre'])){
-                        $nombre=$_POST['nombre'];
-                        $email=$_POST['email'];
-                        $password=$_POST['password'];
+                    <?php
+                    if (isset($_POST['nombre'])) {
+                        $nombre = $_POST['nombre'];
+                        $email = $_POST['email'];
+                        $password = $_POST['password'];
                         $genero = "";
 
-                        if(isset($_POST['genero'])){
-                            $genero=$_POST['genero'];
-                        }else {
-                            $genero="";
+                        if (isset($_POST['genero'])) {
+                            $genero = $_POST['genero'];
+                        } else {
+                            $genero = "";
                         }
 
                         $campos = array();
 
-                        if($nombre == ""){
+                        if ($nombre == "") {
                             array_push($campos, "El nombre no puede estar vacío");
                         }
-                        if($email == "" || strpos($email, "@") === false || strpos($email, ".") === false){
+                        if ($email == "" || strpos($email, "@") === false || strpos($email, ".") === false) {
                             array_push($campos, "El correo electrónico no puede estar vacío y debe tener un formato válido ");
                         };
-                        if($password == "" || strlen($password) < 6){
+                        if ($password == "" || strlen($password) < 6) {
                             array_push($campos, "La contraseña no puede estar vacía y debe tener al menos 6 caracteres");
                         };
-                        if($genero == ""){
+                        if ($genero == "") {
                             array_push($campos, "Debe seleccionar un género");
                         };
-                        if(count($campos) > 0){
+                        if (count($campos) > 0) {
                             echo "<div class='error'>";
-                            for($i = 0; $i < count($campos); $i++){
-                                echo "<li>".$campos[$i]."</li>";
+                            for ($i = 0; $i < count($campos); $i++) {
+                                echo "<li>" . $campos[$i] . "</li>";
                             };
-                        }else {
+                        } else {
                             echo "<div class='success'>
                             Registrado con éxito!!";
-                        };     
-                        echo "</div"; 
-                    }   ;
-                ?>
+                        };
+                        echo "</div";
+                    };
+                    ?>
                     <label for="nombre">Nombre completo: </label> <br>
                     <input type="text" name="nombre" id="nombre">
                     <label for="email">Correo electrónico:</label>
@@ -123,33 +127,35 @@
             </div>
         </div>
         <div class="widget-2">
-            <h3>Que Lugares  le gustaría visitar</h3>
+            <h3>Que Lugares le gustaría visitar?</h3>
             <div class="formulario-contenedor">
                 <form action="index.php" method="post">
-                    <label for="opcion-1">
-                        <input type="checkbox" name="lugares[]" id="opcion-1" value="serengeti">Serengeti
-                    </label>
-                    <label for="opcion-2">
-                        <input type="checkbox" name="lugares[]" id="opcion-2" value="kilimanjaro">Kilimanjaro
-                    </label>
-                    <label for="opcion-3">
-                        <input type="checkbox" name="lugares[]" id="opcion-3" value="zanzibar">Zanzibar
-                    </label>
-                    <label for="opcion-4">
-                        <input type="checkbox" name="lugares[]" id="opcion-4" value="selous">Selous
-                    </label>
-                    <label for="opcion-5">
-                        <input type="checkbox" name="lugares[]" id="opcion-5" value="ngorongoro">Ngorongoro
-                    </label>
-                    <label for="opcion-6">
-                        <input type="checkbox" name="lugares[]" id="opcion-6" value="masai">Masai
-                    </label>
-                    <label for="opcion-7">
-                        <input type="checkbox" name="lugares[]" id="opcion-7" value="stone town">Stone Town
-                    </label>
-                    <label for="opcion-8">
-                        <input type="checkbox" name="lugares[]" id="opcion-8" value="makonde plateau">Makonde Plateau
-                    </label>
+                    <div class="sites">
+                        <label for="opcion-1">
+                            <input type="checkbox" name="lugares[]" id="opcion-1" value="serengeti">Serengeti
+                        </label>
+                        <label for="opcion-2">
+                            <input type="checkbox" name="lugares[]" id="opcion-2" value="kilimanjaro">Kilimanjaro
+                        </label>
+                        <label for="opcion-3">
+                            <input type="checkbox" name="lugares[]" id="opcion-3" value="zanzibar">Zanzibar
+                        </label>
+                        <label for="opcion-4">
+                            <input type="checkbox" name="lugares[]" id="opcion-4" value="selous">Selous
+                        </label>
+                        <label for="opcion-5">
+                            <input type="checkbox" name="lugares[]" id="opcion-5" value="ngorongoro">Ngorongoro
+                        </label>
+                        <label for="opcion-6">
+                            <input type="checkbox" name="lugares[]" id="opcion-6" value="masai">Masai
+                        </label>
+                        <label for="opcion-7">
+                            <input type="checkbox" name="lugares[]" id="opcion-7" value="stone town">Stone Town
+                        </label>
+                        <label for="opcion-8">
+                            <input type="checkbox" name="lugares[]" id="opcion-8" value="makonde plateau">Makonde Plateau
+                        </label>
+                    </div>
                     <h4>Elije las actividades que le agrada realizar en vacaciones</h4>
                     <select name="actividades" multiple id="actividades">
                         <option value="senderismo">Senderismo</option>
@@ -202,7 +208,8 @@
             </div>
         </footer>
     </div>
-    
-    
+
+
 </body>
+
 </html>
