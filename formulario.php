@@ -45,18 +45,20 @@
         </main>
         <aside>
             <h4>Aquí está una lista de cosas que se pueden hacer en Tanzania:</h4>
-            <ol>
-                <li>Explorar el Parque Nacional de Serengeti y ver la gran migración de animales.</li>
-                <li>Sumergirse en la cultura local visitando los pueblos Masai.</li>
-                <li>Ir en un safari para ver los Big Five (león, elefante, rinoceronte, búfalo y leopardo).</li>
-                <li>Nadar en las playas de Zanzíbar.</li>
-                <li>Visitar el Monte Kilimanjaro, el pico más alto de África.</li>
-                <li>Descubrir la fauna y la flora en el Parque Nacional de Ngorongoro.</li>
-                <li>Ir en una expedición a la llanura de Selous.</li>
-                <li>Ver los colores del mercado Stone Town en Zanzíbar.</li>
-                <li>Visit the cultural center and museum of Makonde Plateau.</li>
-                <li>Participar en actividades al aire libre como senderismo, rafting, equitación o buceo.</li>
-            </ol>
+            <div class="lugares">
+                <ul>
+                    <li>Explorar el Parque Nacional de Serengeti y ver la gran migración de animales.</li>
+                    <li>Sumergirse en la cultura local visitando los pueblos Masai.</li>
+                    <li>Ir en un safari para ver los Big Five (león, elefante, rinoceronte, búfalo y leopardo).</li>
+                    <li>Nadar en las playas de Zanzíbar.</li>
+                    <li>Visitar el Monte Kilimanjaro, el pico más alto de África.</li>
+                    <li>Descubrir la fauna y la flora en el Parque Nacional de Ngorongoro.</li>
+                    <li>Ir en una expedición a la llanura de Selous.</li>
+                    <li>Ver los colores del mercado Stone Town en Zanzíbar.</li>
+                    <li>Visit the cultural center and museum of Makonde Plateau.</li>
+                    <li>Participar en actividades al aire libre como senderismo, rafting, equitación o buceo.</li>
+                </ul>
+            </div>
             <div class="imagen-contenedor">
                 <img src="./img/safari.jpg" alt="tanzania">
             </div>
@@ -157,7 +159,7 @@
                         </label>
                     </div>
                     <h4>Elije las actividades que le agrada realizar en vacaciones</h4>
-                    <select name="actividades" multiple id="actividades">
+                    <select name="actividades[]" multiple id="actividades">
                         <option value="senderismo">Senderismo</option>
                         <option value="rafting">Rafting</option>
                         <option value="equitación">Equitación</option>
